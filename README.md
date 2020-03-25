@@ -32,3 +32,7 @@ func main() {
 ## Todo
 
 - [ ] Find all links base on regex, instead of relying on goquery
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

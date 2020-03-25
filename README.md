@@ -20,7 +20,7 @@ import (
 )
 
 func main() {
-	// # create a crawler instance with option
+	// # create a crawler instance
 	spider := crawler.Crawler{}
 	// # crawl the page
 	result, domain := spider.Crawl("https://kith.com/")

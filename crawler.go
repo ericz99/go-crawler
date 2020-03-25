@@ -25,13 +25,7 @@ only scrape the page itself, and not other links
 
 // Crawler struct (MODEL)
 type Crawler struct {
-	Proxy  models.Proxy `json:"proxy"`
-	Option Option       `json:"option"`
-}
-
-// Option struct (MODEL)
-type Option struct {
-	Concurrency int `json:"concurrency"`
+	Proxy models.Proxy `json:"proxy"`
 }
 
 // ScrapeResult struct (MODEL)

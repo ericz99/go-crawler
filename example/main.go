@@ -1,12 +1,12 @@
-package main
+package example
 
 import (
-	crawler "github.com/ericz99/crawler"
+	crawler "github.com/ericz99/go-crawler"
 )
 
 func main() {
 	// # create a crawler instance with option
-	spider := crawler.Crawler{Option: crawler.Option{Concurrency: 10}}
+	spider := crawler.Crawler{}
 	// # crawl the page
 	result, domain := spider.Crawl("https://kith.com/")
 	// # download result

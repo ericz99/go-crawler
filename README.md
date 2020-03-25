@@ -31,5 +31,4 @@ func main() {
 
 ## Todo
 
-- [ ] Find all links base on regex
-- [ ] Add proxy support
+- [ ] Find all links base on regex, instead of relying on goquery

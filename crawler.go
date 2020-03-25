@@ -3,7 +3,6 @@ package crawler
 import (
 	"bufio"
 	"fmt"
-	"go-crawler/models"
 	"log"
 	"net/http"
 	"net/url"
@@ -13,20 +12,8 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
-/*
-deep crawl specific websites, and get all url links + relative path
-
-find a tag src, script tag src, link href
-
-then download the links as site.txt
-
-only scrape the page itself, and not other links
-*/
-
 // Crawler struct (MODEL)
-type Crawler struct {
-	Proxy models.Proxy `json:"proxy"`
-}
+type Crawler struct{}
 
 // ScrapeResult struct (MODEL)
 type ScrapeResult struct {
@@ -34,14 +21,15 @@ type ScrapeResult struct {
 }
 
 // Get - REQUEST METHOD
-func Get(url string) (*http.Response, error) {
+func Get(startURL string) (*http.Response, error) {
+
 	// # custom http client
 	client := http.Client{
-		Timeout: 5 * time.Second,
+		Timeout: 10 * time.Second,
 	}
 
 	// # make request
-	req, err := http.NewRequest("GET", url, nil)
+	req, err := http.NewRequest("GET", startURL, nil)
 	// # add headers to avoid issues with sites sending error codes for default golang user agent
 	req.Header.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36")
 	req.Header.Add("Accept", "*/*")
